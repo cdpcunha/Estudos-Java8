@@ -20,6 +20,8 @@ public class OrdenaString {
 		listaStrings.add("String");
 		listaStrings.add("Menor");
 
+		System.out.println("=============================Ordenação================================");
+		
 		System.out.print("Lista Desorganizada : \n" + listaStrings + "\n");
 
 		Collections.sort(listaStrings);
@@ -27,14 +29,24 @@ public class OrdenaString {
 
 		listaStrings.sort(comparator);
 		System.out.print("\nLista Organizada pelo Comparator criado : \n" + listaStrings + "\n");
-
+		
+		System.out.println("\nLista Organizada pela exp. Lambda : ");
+		listaStrings.sort((s1,s2)-> Integer.compare(s1.length(), s2.length()));
+		System.out.println(listaStrings);
+		
+		System.out.println("=============================Impressão================================");
 		System.out.print("\nImpressão da lista com o For enchanced : ");
 		for(String x : listaStrings) {
 			System.out.println(x);
 		}
 		
-		System.out.print("\nImpressão da lista com o Consumer :");
+		System.out.print("\nImpressão da lista com o Consumer : \n");
 		listaStrings.forEach(consumer);
+		
+		//simplificando a impressão com lambda
+		
+		System.out.print("\nImpressão com Lambda : \n");
+		listaStrings.forEach(s -> System.out.println(s));
 	}
 
 }
