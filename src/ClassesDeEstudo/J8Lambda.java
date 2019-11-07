@@ -1,4 +1,4 @@
-package OrdenaString;
+package ClassesDeEstudo;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -6,10 +6,9 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.function.Consumer;
 
-public class OrdenaString {
+public class J8Lambda {
 
-	public static void main(String[] args) {
-
+	public static void OrdenarString() {
 		ComparaPorTamanho comparator = new ComparaPorTamanho();
 		Consumer<String> consumer = new ImprimePorLinha();
 
@@ -21,7 +20,7 @@ public class OrdenaString {
 		listaStrings.add("Menor");
 
 		System.out.println("=============================Ordenação================================");
-		
+
 		System.out.print("Lista Desorganizada : \n" + listaStrings + "\n");
 
 		Collections.sort(listaStrings);
@@ -29,22 +28,22 @@ public class OrdenaString {
 
 		listaStrings.sort(comparator);
 		System.out.print("\nLista Organizada pelo Comparator criado : \n" + listaStrings + "\n");
-		
+
 		System.out.println("\nLista Organizada pela exp. Lambda : ");
-		listaStrings.sort((s1,s2)-> Integer.compare(s1.length(), s2.length()));
+		listaStrings.sort((s1, s2) -> Integer.compare(s1.length(), s2.length()));
 		System.out.println(listaStrings);
-		
+
 		System.out.println("=============================Impressão================================");
 		System.out.print("\nImpressão da lista com o For enchanced : ");
-		for(String x : listaStrings) {
+		for (String x : listaStrings) {
 			System.out.println(x);
 		}
-		
+
 		System.out.print("\nImpressão da lista com o Consumer : \n");
 		listaStrings.forEach(consumer);
-		
-		//simplificando a impressão com lambda
-		
+
+// simplificando a impressão com lambda
+
 		System.out.print("\nImpressão com Lambda : \n");
 		listaStrings.forEach(s -> System.out.println(s));
 	}
@@ -71,5 +70,4 @@ class ImprimePorLinha implements Consumer<String> {
 	public void accept(String s) {
 		System.out.println(s);
 	}
-
 }
