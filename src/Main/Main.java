@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ClassesDeEstudo.Curso;
+import ClassesDeEstudo.Datas;
 import ClassesDeEstudo.J8Lambda;
 
 public class Main {
@@ -18,5 +19,9 @@ public class Main {
 		System.out.println(cursos);
 		
 		Curso.ExemplosStream(cursos);
+		System.out.println("\n\n=========Estudo de Date=======");
+		
+		Datas.EstudoDatas();
+		
 	}
 }
